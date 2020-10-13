@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}
+Login - Cryptocon
+{% endblock %}
+{% block content %}
+<h2>Login to Cryptocon</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+  <div>OR</div>
+  <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
+  <br>
+  <a href="{% provider_login_url 'google' %}">Login with Google</a><br>
+  <div>Dont have an account  ?</div>
+  <p>Sign up <a href="{% url 'signup' %}">Here</a>
+</form>
+{% endblock %}

@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- add bootstrap links -->
+    <link rel="stylesheet" href= "{% static 'css/main.css'%}">
+    <title>{% block title %}$Cryphcon {% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <nav>
+        <span class="siteName">Cryphcon</span>
+        <div class="nav-links">
+            <a>Wallet</a>
+            <a href="#about">About</a>
+            <a href="#exchanges">Exchange-In-Naira</a>
+            <a href="{% url 'signup' %}">signup</a>
+            <a href="{% url 'logout' %}">login</a>
+        </div>
+    </nav>
+    <header class="nav-extension">
+        <div class="crypto">
+            <img src= "{% static 'images/green-circle.svg' %}">
+            <div>
+                <span>Bitcoin 24h</span>
+                <span>${{rates}}<br>{{time}}
+                </span>
+            </div>
+        </div>
+        <div class="crypto">
+            <img src= "{% static 'images/red-circle.svg' %}">
+            <div>
+                <span>Ethereum 24h</span>
+                <span>${{rates2}}<br>{{time}}
+
+                </span>
+            </div>
+        </div>
+        <div class="crypto">
+           <img src= "{% static 'images/red-circle.svg' %}">
+            <div>
+                <span>XRP 24h</span>
+                <span>${{rates3}}<br>{{time}}
+
+                </span>
+            </div>
+        </div>
+    </header>
+    <main class="landing-page">
+        <div class="converter">
+            <div class="text">
+                <header>Crypon</header>
+                <div class="tagline">Your Trusted Online Cryptoconverter</div>
+                <div class="line">Convert your cryptocurrencies to naira</div>
+            </div>
+            <div class="calc">
+                <header>50,000</header>
+                <div class="calc-cnt">
+                    <div class="inputs">
+                        <input type="text" placeholder="Enter an account">
+                        <div>From</div>
+                        <div class="opt">
+                            <input type="text" placeholder="Choose a Currency">
+                            <img src= "{% static 'images/input-options.svg' %}" class="options">
+                        </div>
+                        <div>To</div>
+                        <input type="text" placeholder="Naira">
+                    </div>
+                    <img src= "{% static 'images/convert.svg' %}" class="convert">
+                </div>          
+            </div>
+        </div>
+        <div class="heading">
+            <div>
+                <img src= "{% static 'images/Bitcoin.svg' %}">
+                <span>Bitcoin<br>N{{naira}}</span>
+            </div>
+            <div>
+                <img src= "{% static 'images/Ethereum.svg' %}">
+                <span>Ethereum<br>N{{naira2}}</span>
+            </div>
+            <div>
+               <img src= "{% static 'images/XRP.svg' %}">
+                <span>XRP<br>N{{naira3}}</span>
+            </div>
+        </div>
+        <div class="uses">
+            <div class="first-flex">
+               <img src= "{% static 'images/crt-crypto-logo.svg' %}">
+                <div>
+                    Convert your crypto-currencies to Naira
+                </div>
+            </div>
+            <div class="second-flex">
+               <img src= "{% static 'images/timer.svg' %}">
+                <div>
+                    Check Real-Time Updates on your crypto-currencies
+                </div>
+            </div>
+        </div>
+        <div class="section two">
+            <img src= "{% static 'images/Chart.svg' %}">
+            <div class="text">
+                <header id="about">Know the rising and falling of trading currencies in real-time</header>
+                <span>Crypcon gives real time updates on Bitcoin, Ethereum and XRP.</span>
+            </div>
+        </div>
+        <div class="section three">
+            <div class="text">
+                <header>Check out our crypcon mobile app</header>
+                <span>Conviniently access real time updates on trading crypto-currencies via our mobile app</span>
+                <span class="rem">Available on Playstore</span>
+            </div>
+            <img src= "{% static 'images/desktop-img-1.svg' %}">
+        </div>
+        <div class="section four">
+            <img src= "{% static 'images/desktop-img-2.svg' %}">
+            <div class="text">
+                <header>Why download our crypcon app?</header>
+                <span>
+                    <img src= "{% static 'images/check.svg' %}">
+                    Real time update from the crypto market
+                </span>
+                <span>
+                    <img src= "{% static 'images/check.svg' %}">
+                    A crypto converter
+                </span>
+                <span>
+                    <img src= "{% static 'images/check.svg' %}">
+                    A user friendly Interface
+                </span>
+            </div>
+        </div>
+        <div class="section five">
+            <div class="text">
+                <header>
+                    Keeping track of the crypto-currency market just became a whole lot easier with crypcon
+                </header>
+            </div>
+            <img src= "{% static 'images/desktop-img-3.svg' %}">
+        </div>
+        <aside class="remarks">
+            <header>
+                Crypcon moments,here’s what crypcon users are saying
+            </header>
+            <div class="flexy">
+                <div class="cnt">
+                    <h2>Cryphcon is easy to use</h2>
+                    <q>Crypton is easy to use and efficient, I love the real time updates</q>
+                    <cite>Dami Adetola,<br>Bitcoin Trader</cite>
+                </div>
+                <div class="hr"></div>
+                <div class="cnt">
+                    <h2>Cryphcon is flexible</h2>
+                    <q>whether it is the mobile app or the website, cryphon is very flexible.</q>
+                    <cite>Chioma Okafor,<br>Ethereum Trader</cite>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <div class="foot-head">
+            <img src= "{% static 'images/Crphcon.svg' %}" class="watermark">
+            <div class="newsletter">
+                Join the millions of traders in the crypto-currency world
+            </div>
+            <div class="foot-nav">
+                <a>About</a>
+                <div class="fer"><span class="fur">t</span> @ecxinternship</div>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <span>&copy;2020 ECX INTERNSHIP</span>
+            <span>Done by team-4</span>
+        </div>
+    </footer>
+    {% endblock %}
+    
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+
+
